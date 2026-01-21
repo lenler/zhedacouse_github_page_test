@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浙江大学 浙商企业家创新提升高级研修班</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 主色调定义 - 浙大专业创新色系 */
+        :root {
+            --primary-color: #0066cc; /* 浙大蓝 - 代表官方权威 */
+            --secondary-color: #52c41a; /* 清新绿色 - 代表创新成长 */
+            --text-color: #333333; /* 中灰色 - 代表清晰稳重 */
+            --light-bg: #f7f9fc; /* 极浅灰 - 代表明亮清新 */
+            --card-bg: #ffffff; /* 纯白色 - 代表纯净高端 */
+            --border-color: #e1e6ed; /* 浅灰蓝 - 代表精致典雅 */
+        }
+        
+        /* 头部样式 */
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        /* 热门课程标签 */
+        .hot-course {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .header .concept {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            color: white;
+            text-align: center;
+        }
+        
+        /* 统计数据样式 */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 80px;
+            padding: 10px 0;
+        }
+        
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+            margin: auto 0;
+            line-height: 1.2;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: white;
+            margin-top: 8px;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+        
+        /* 主要内容区域 */
+        .main-content {
+            padding: 40px;
+            background-color: var(--light-bg);
+        }
+        
+        /* 主要内容区域 - 左右布局 */
+        .content-layout {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        /* 左侧主内容 */
+        .main-left {
+            flex: 1;
+            min-width: 600px;
+        }
+        
+        /* 右侧边栏 */
+        .main-right {
+            width: 300px;
+        }
+        
+        /* 内容区块样式 */
+        .section {
+            margin-bottom: 30px;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* 标题样式 */
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        /* 段落样式 */
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        
+        /* 列表样式 */
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.8;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+        
+        /* 课程模块样式 */
+        .module {
+            margin-bottom: 25px;
+        }
+        
+        .module h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .module ul {
+            margin-left: 20px;
+        }
+        
+        /* 师资列表样式 */
+        .teacher-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .teacher-item {
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .teacher-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        
+        /* 侧边栏样式 */
+        .sidebar-section {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .sidebar-content {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .sidebar-content p {
+            margin-bottom: 10px;
+        }
+        
+        /* 汇款信息样式 */
+        .payment-info {
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        .payment-info p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* 按钮样式 */
+        .btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #004494;
+            box-shadow: 0 4px 12px rgba(0, 87, 184, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* 底部样式 */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85rem;
+        }
+        
+        .footer p {
+            margin-bottom: 8px;
+            opacity: 0.9;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .content-layout {
+                flex-direction: column;
+            }
+            
+            .main-right {
+                width: 100%;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                gap: 40px;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* 保持统计数据横排 */
+            .stats {
+                gap: 20px;
+            }
+            
+            .hot-course {
+                position: static;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="hot-course">热门课程</div>
+            <h1>浙江大学浙商企业家创新提升高级研修班</h1>
+            <p class="concept">洞见企业经营智慧 探讨新型企业管理之道</p>
+            
+            <!-- 统计数据 -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">年办学经验</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">大课程模块</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">38000</span>
+                    <span class="stat-label">学费(元/人)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" style="font-size: 1.8rem;">浙大</span>
+                    <span class="stat-label">权威师资</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 主要内容区域 -->
+        <div class="main-content">
+            
+            <!-- 主要内容区域 - 左右布局 -->
+            <div class="content-layout">
+                <!-- 左侧主内容 -->
+                <div class="main-left">
+                    <!-- 项目背景 -->
+                    <div class="section">
+                        <h2 class="section-title">一、项目背景</h2>
+                        <p>浙江大学浙商企业家创新提升高级研修班坚持对时代发展趋势的敏锐洞察，顺应经济形势、行业变革与技术创新的潮流，历经多次精心的课程迭代。课程内容涵盖数字化转型、战略管理、市场营销创新、领导力提升等多个关键领域，不仅有资深企业家分享实战经验与独到见解，更为学员提供全方位、多层次、高价值的学习体验。</p>
+                    </div>
+                    
+                    <!-- 项目特色 -->
+                    <div class="section">
+                        <h2 class="section-title">二、项目特色</h2>
+                        <ul>
+                            <li>沉淀20余年办学经验，课程持续迭代更新</li>
+                            <li>创新式知识结构，高端校友生态圈层</li>
+                            <li>浸润式课堂，延长企业发展触角</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 课程模块 -->
+                    <div class="section">
+                        <h2 class="section-title">三、课程模块</h2>
+                        
+                        <div class="module">
+                            <h3>1. 宏观经济与格局视野</h3>
+                            <ul>
+                                <li>经济“新常态”与政策解读</li>
+                                <li>技术迭代下新一轮产业机会与投资策略</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="module">
+                            <h3>2. 商业科技</h3>
+                            <ul>
+                                <li>“AI+”产业与创新发展</li>
+                                <li>洞见从技术到商业AI时代的企业战略</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="module">
+                            <h3>3. 战略管理与创新思维</h3>
+                            <ul>
+                                <li>企业战略规划与策略创新</li>
+                                <li>企业数字化转型与价值创新</li>
+                                <li>新消费设计的创新力量</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="module">
+                            <h3>4. 品牌塑造与运营管理</h3>
+                            <ul>
+                                <li>营销战略规划与品牌竞争优势</li>
+                                <li>新媒体品牌营销策划与设计创新</li>
+                                <li>品牌价值与商业价值重塑</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="module">
+                            <h3>5. 企业风险防范与财税管理</h3>
+                            <ul>
+                                <li>公司治理与股权设计</li>
+                                <li>领导者的财务思维</li>
+                                <li>企业法律实务与税务筹划</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="module">
+                            <h3>6. 核心技能与管理提升</h3>
+                            <ul>
+                                <li>人力资源创新与组织效能提升</li>
+                                <li>学说治理之“术”，理表达之“道”</li>
+                                <li>组织管理与领导力变革</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="module">
+                            <h3>7. 经营哲学与人文素养</h3>
+                            <ul>
+                                <li>经营哲学与企业家修为</li>
+                                <li>儒家文化与企业价值观</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="module">
+                            <h3>8. 高端论坛与移动课堂</h3>
+                            <ul>
+                                <li>标杆企业参访</li>
+                                <li>企业家年会</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 拟邀师资 -->
+                    <div class="section">
+                        <h2 class="section-title">四、拟邀师资</h2>
+                        <div class="teacher-list">
+                            <div class="teacher-item">
+                                <p>赵瑜：浙江大学传媒与国际文化学院副院长、教授、博士生导师</p>
+                            </div>
+                            <div class="teacher-item">
+                                <p>洪强：知名学者，浙江大学求是特聘教授</p>
+                            </div>
+                            <div class="teacher-item">
+                                <p>潘诚：文化学者、著名企业战略管理专家</p>
+                            </div>
+                            <div class="teacher-item">
+                                <p>金小刚：浙江大学计算机科学与技术学院副教授</p>
+                            </div>
+                            <div class="teacher-item">
+                                <p>周夏飞：浙江大学副教授、硕士生导师，并兼任浙江省审计学会理事</p>
+                            </div>
+                            <div class="teacher-item">
+                                <p>陈慧：北京邮电大学经济管理学院教授、博士生导师</p>
+                            </div>
+                            <div class="teacher-item">
+                                <p>钱栋玉：企业转型升级系统CTU-Model创始人，曾任金股轻(002722)执行总裁</p>
+                            </div>
+                            <div class="teacher-item">
+                                <p>庄志敏：中国著名营销实战与品牌研究专家</p>
+                            </div>
+                            <div class="teacher-item">
+                                <p>贺正生：中华全国律师协会会员，北京市律师协会私募股权与风险投资专业委员会委员</p>
+                            </div>
+                            <div class="teacher-item">
+                                <p>王一婷：浙江传媒学院播音主持艺术学院副院长、教授、硕士生导师</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 联系方式 -->
+                    <div class="section">
+                        <h2 class="section-title">五、联系方式</h2>
+                        <p><strong>单位：</strong>浙江大学传媒国际文化经济培训中心</p>
+                        <p><strong>地址：</strong>杭州市上城区凯旋路268号浙江大学华家池校区中心南楼</p>
+                    </div>
+                </div>
+                
+                <!-- 右侧边栏 -->
+                <div class="main-right">
+                    <!-- 课程信息 -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">课程信息</h3>
+                        <div class="sidebar-content">
+                            <p><strong>学制：</strong>每月集中学习一次，每次2天上课，研修14天</p>
+                            <p><strong>地点：</strong>浙江大学</p>
+                            <p><strong>学费：</strong>38000元/人</p>
+                            <p><strong>证书：</strong>颁发“浙江大学浙商企业家创新提升高级研修班”结业证书</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 招生对象 -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">招生对象</h3>
+                        <div class="sidebar-content">
+                            <p>企业董事长、创始人、合伙人、总经理及有志于自我提升与终身学习的管理人员</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 汇款信息 -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">汇款信息</h3>
+                        <div class="payment-info">
+                            <p><strong>户名：</strong>浙江大学</p>
+                            <p><strong>开户行：</strong>中国银行杭州浙大支行</p>
+                            <p><strong>账号：</strong>376 536 050</p>
+                            <p><strong>用途：</strong>***学员创新研修费</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 联系方式 -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">联系方式</h3>
+                        <div class="sidebar-content">
+                            <p><strong>单位：</strong>浙江大学传媒国际文化经济培训中心</p>
+                            <p><strong>地址：</strong>杭州市上城区凯旋路268号浙江大学华家池校区中心南楼</p>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 15px;">立即咨询</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部 -->
+        <div class="footer">
+            <p>© 2024 浙江大学 版权所有</p>
+            <p>浙ICP备xxxxxxxx号</p>
+            <p>地址：浙江省杭州市浙江大学华家池校区</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浙江大学 国学智慧与管理应用高级研修班</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 主色调定义 - 国学风格 */
+        :root {
+            --primary-color: #8B0000; /* 朱砂红 - 代表庄重典雅 */
+            --secondary-color: #DAA520; /* 赤金色 - 代表高贵吉祥 */
+            --text-color: #333333; /* 墨色 - 代表深邃稳重 */
+            --light-bg: #F5F5DC; /* 米色 - 代表典雅古朴 */
+            --card-bg: #FFFFFF; /* 玉白 - 代表纯洁高雅 */
+            --border-color: #D2B48C; /* 棕褐色 - 代表古典韵味 */
+        }
+        
+        /* 头部样式 - 参考金融投资班设计 */
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        /* 热门课程标签 */
+        .hot-course {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            color: white;
+            text-align: center;
+        }
+        
+        /* 统计数据样式 */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 80px;
+            padding: 10px 0;
+        }
+        
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+            margin: auto 0;
+            line-height: 1.2;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: white;
+            margin-top: 8px;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+        
+        /* 主要内容区域 */
+        .main-content {
+            padding: 40px;
+            background-color: var(--light-bg);
+        }
+        
+        /* 主要内容区域 - 左右布局 */
+        .content-layout {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        /* 左侧主内容 */
+        .main-left {
+            flex: 1;
+            min-width: 600px;
+        }
+        
+        /* 右侧边栏 */
+        .main-right {
+            width: 300px;
+        }
+        
+        /* 内容区块样式 */
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        /* 标题样式 */
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        /* 段落样式 */
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        
+        /* 列表样式 */
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.8;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+        
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        th {
+            background-color: #F5F5DC; /* 米色背景 - 古典典雅 */
+            border-bottom: 2px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+        
+        tr:hover {
+            background-color: rgba(210, 180, 140, 0.1); /* 淡棕色悬停效果 */
+        }
+        
+        /* 侧边栏样式 */
+        .sidebar-section {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .sidebar-content {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .sidebar-content p {
+            margin-bottom: 10px;
+        }
+        
+        /* 按钮样式 */
+        .btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6B0000; /* 深朱砂红 - 悬停效果 */
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* 底部样式 */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85rem;
+        }
+        
+        .footer p {
+            margin-bottom: 8px;
+            opacity: 0.9;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .content-layout {
+                flex-direction: column;
+            }
+            
+            .main-right {
+                width: 100%;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                gap: 40px;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* 保持统计数据横排 */
+            .stats {
+                gap: 20px;
+            }
+            
+            .hot-course {
+                position: static;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="hot-course">热门课程</div>
+            <h1>浙江大学国学智慧与管理应用高级研修班</h1>
+            <p class="subtitle">修心 开悟 明商道 | 齐家 治企 传基业</p>
+            
+            <!-- 统计数据 -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">24</span>
+                    <span class="stat-label">集中研修天数</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">核心课程模块</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">48800</span>
+                    <span class="stat-label">学费(元/人)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" style="font-size: 1.8rem;">浙大</span>
+                    <span class="stat-label">权威师资</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 主要内容区域 -->
+        <div class="main-content">
+            
+            <!-- 主要内容区域 - 左右布局 -->
+            <div class="content-layout">
+                <!-- 左侧主内容 -->
+                <div class="main-left">
+                    <!-- 项目优势 -->
+                    <div class="section">
+                        <h2 class="section-title">项目优势</h2>
+                        <ul>
+                            <li>深耕企业家培训十九年</li>
+                            <li>浙大唯一国学品牌项目</li>
+                            <li>坚持以国学文化为主轴</li>
+                            <li>深耕易耨博彩众家所长</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 课程设置 -->
+                    <div class="section">
+                        <h2 class="section-title">课程设置（有文有术）</h2>
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>主要课程</th>
+                                        <th>主要研修内容</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>国学概论</td>
+                                        <td>国学通论、经史子集、国学六法</td>
+                                    </tr>
+                                    <tr>
+                                        <td>易经篇（群经之首）</td>
+                                        <td>《周易》今解；《周易》智慧与现代企业管理</td>
+                                    </tr>
+                                    <tr>
+                                        <td>儒家篇（内圣外王）</td>
+                                        <td>《论语》与儒家传统文化儒道；禅通融与管理提升</td>
+                                    </tr>
+                                    <tr>
+                                        <td>道家篇（修心开智）</td>
+                                        <td>《道德经》的智慧、庄子的人生智慧</td>
+                                    </tr>
+                                    <tr>
+                                        <td>佛学篇（明心见性）</td>
+                                        <td>《金刚经》与企业管理的智慧；禅宗智慧与心灵修炼</td>
+                                    </tr>
+                                    <tr>
+                                        <td>兵家篇（运筹帷幄）</td>
+                                        <td>《孙子兵法》与现代商战；《鬼谷子》的谋略与纵横术</td>
+                                    </tr>
+                                    <tr>
+                                        <td>法家篇（法术势举）</td>
+                                        <td>《法家》智慧与现代管理；《法家韩非子》与《市场竞争策略》</td>
+                                    </tr>
+                                    <tr>
+                                        <td>医家篇（身心安泰）</td>
+                                        <td>《黄帝内经》与中国传统医学；儒释道、易、医与名医保健沙龙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>哲学篇（对话先哲）</td>
+                                        <td>中国传统文化的现代转化；中西方企业文化比较</td>
+                                    </tr>
+                                    <tr>
+                                        <td>游学篇（心灵之旅）</td>
+                                        <td>考察交流</td>
+                                    </tr>
+                                    <tr>
+                                        <td>国学名师讲坛</td>
+                                        <td>年度传统文化盛会，与数千名企业家同求国学精华要义，共得名师智慧真谛</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- 部分师资 -->
+                    <div class="section">
+                        <h2 class="section-title">部分师资</h2>
+                        <ul>
+                            <li>吴飞：浙江大学求是特聘教授、博士生导师</li>
+                            <li>何善蒙：浙江大学哲学系教授、博士生导师</li>
+                            <li>褚良才：浙江大学军事理论教研室主任</li>
+                            <li>董平：浙江大学哲学系教授、博士生导师</li>
+                            <li>吴言生：文学博士，哲学博士后，博士生导师</li>
+                            <li>杨立华：北京大学哲学系教授、博士生导师</li>
+                            <li>金海峰：长春大学国学研究院发展中心主任、人文学院教授</li>
+                            <li>张松辉：湖南大学岳麓书院教授</li>
+                            <li>贺娟：北京中医药大学中医学院副院长</li>
+                            <li>李任飞：西南交通大学人文学院副教授</li>
+                            <li>周春健：中山大学哲学系教授、博士生导师</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 项目价值 -->
+                    <div class="section">
+                        <h2 class="section-title">项目价值（有为有助）</h2>
+                        <ul>
+                            <li>搭建企业家交流平台，丰富高层次校友资源</li>
+                            <li>学员将成为浙江大学传媒国际企业家终身校友，享受校友待遇，可参加浙江大学传媒与国际文化学院举办的各种相关校友联谊活动</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 教学管理 -->
+                    <div class="section">
+                        <h2 class="section-title">教学管理</h2>
+                        <ul>
+                            <li><strong>目标学员</strong>：有志于自我提升与终身学习的管理人员；企业董事长、创始人、总经理；国学爱好者</li>
+                            <li><strong>课时</strong>：集中研修24天，每周周末安排集中授课1次，含企业参访考察和游学</li>
+                            <li><strong>学费</strong>：48800元/人（费用包含：学费、教师课酬、教材资料费、教室场地费、学校综合管理费、证书费等）</li>
+                            <li><strong>证书</strong>：浙江大学统一颁发《浙江大学国学智慧与管理应用高级研修班》结业证书</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 右侧边栏 -->
+                <div class="main-right">
+                    <!-- 项目价值 -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">项目价值</h3>
+                        <div class="sidebar-content">
+                            <ul style="list-style-type: disc; padding-left: 15px; margin: 0;">
+                                <li>搭建企业家交流平台</li>
+                                <li>丰富高层次校友资源</li>
+                                <li>享受终身校友待遇</li>
+                                <li>参加校友联谊活动</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 咨询报名 -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">咨询报名</h3>
+                        <div class="sidebar-content">
+                            <p><strong>联系人：</strong>浙江大学传媒国际文化经济高培中心</p>
+                            <p><strong>电话：</strong>0571-86971122</p>
+                            <p><strong>地址：</strong>浙江大学华家池校区</p>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 15px;">立即咨询</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部 -->
+        <div class="footer">
+            <p>© 2024 浙江大学 版权所有</p>
+            <p>浙ICP备xxxxxxxx号</p>
+            <p>地址：浙江省杭州市浙江大学华家池校区</p>
+        </div>
+    </div>
+</body>
+</html>
