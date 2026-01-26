@@ -738,17 +738,212 @@
         }
         
         @media (max-width: 768px) {
-            /* 保持统计数据横排 */
+            body {
+                font-size: 13px;
+            }
+            
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+            }
+            
+            .header {
+                padding: 30px 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+                line-height: 1.3;
+            }
+            
+            .header p.subtitle {
+                font-size: 0.9rem;
+                padding: 0 10px;
+            }
+            
+            .hot-course {
+                top: 15px;
+                right: 15px;
+                padding: 6px 15px;
+                font-size: 0.8rem;
+            }
+            
             .stats {
-                gap: 20px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 10px 0;
+            }
+            
+            .stat-item {
+                min-width: 80px;
+            }
+            
+            .stat-number {
+                font-size: 1.2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.75rem;
+            }
+            
+            .main-content {
+                padding: 15px;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+                padding: 12px 15px;
+                margin-bottom: 15px;
+            }
+            
+            .section p {
+                font-size: 0.9rem;
+                line-height: 1.7;
             }
             
             .course-intro {
-                padding: 20px;
+                padding: 15px;
             }
             
             .module-content {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .icon-text-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .icon-text-item {
+                padding: 15px;
+            }
+            
+            .item-title {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+            
+            .item-description {
+                font-size: 0.85rem;
+            }
+            
+            .module-card {
+                padding: 15px;
+            }
+            
+            .module-title {
+                font-size: 1rem;
+            }
+            
+            .module-desc {
+                font-size: 0.85rem;
+            }
+            
+            .faculty-card {
+                padding: 15px;
+            }
+            
+            .faculty-name {
+                font-size: 1rem;
+            }
+            
+            .faculty-title {
+                font-size: 0.85rem;
+            }
+            
+            .faculty-intro {
+                font-size: 0.85rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .footer {
+                padding: 20px 15px;
+            }
+            
+            .footer h3 {
+                font-size: 1rem;
+            }
+            
+            .footer p {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                font-size: 12px;
+            }
+            
+            .header {
+                padding: 20px 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .stats {
+                gap: 10px;
+            }
+            
+            .stat-item {
+                min-width: 70px;
+            }
+            
+            .stat-number {
+                font-size: 1.1rem;
+            }
+            
+            .stat-label {
+                font-size: 0.7rem;
+            }
+            
+            .main-content {
+                padding: 10px;
+            }
+            
+            .section-title {
+                font-size: 1.1rem;
+                padding: 10px 12px;
+            }
+            
+            .section p {
+                font-size: 0.85rem;
+            }
+            
+            .course-intro {
+                padding: 12px;
+            }
+            
+            .icon-text-grid {
+                gap: 12px;
+            }
+            
+            .icon-text-item {
+                padding: 12px;
+            }
+            
+            .module-content {
+                gap: 12px;
+            }
+            
+            .module-card {
+                padding: 12px;
+            }
+            
+            .faculty-card {
+                padding: 12px;
+            }
+            
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.85rem;
             }
         }
     </style>
