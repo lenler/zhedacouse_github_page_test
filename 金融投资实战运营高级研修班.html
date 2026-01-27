@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>浙江大学 数智时代金融投资实战运营高级研修班</title>
     <style>
         * {
@@ -703,6 +703,11 @@
             
             .main-right {
                 width: 100%;
+                min-width: 100%;
+            }
+            
+            .main-left {
+                min-width: 100%;
             }
             
             .header {
@@ -719,6 +724,18 @@
             
             .main-content {
                 padding: 20px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .icon-text-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .info-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
         }
         
@@ -776,9 +793,14 @@
                 padding: 15px;
             }
             
+            .section {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
             .section-title {
                 font-size: 1.2rem;
-                padding: 12px 15px;
+                padding: 0 0 10px 0;
                 margin-bottom: 15px;
             }
             
@@ -858,11 +880,29 @@
             .footer p {
                 font-size: 0.85rem;
             }
+            
+            /* 确保文本内容换行 */
+            .section p,
+            .item-description,
+            .feature-item p,
+            .module-item-list li,
+            .info-card p {
+                word-wrap: break-word;
+                line-height: 1.6;
+            }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 320px) {
+            /* 小屏幕特殊优化 */
             body {
-                font-size: 12px;
+                font-size: 14px;
+            }
+            
+            .container {
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                overflow-x: hidden;
             }
             
             .header {
@@ -870,65 +910,221 @@
             }
             
             .header h1 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+                line-height: 1.3;
+                margin-bottom: 10px;
+            }
+            
+            .header p.subtitle {
+                font-size: 0.8rem;
+                padding: 0 5px;
+                margin-bottom: 15px;
+            }
+            
+            .hot-course {
+                top: 10px;
+                right: 10px;
+                padding: 4px 10px;
+                font-size: 0.7rem;
             }
             
             .stats {
                 gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 10px 0;
             }
             
             .stat-item {
                 min-width: 70px;
+                min-height: 50px;
+                padding: 5px;
             }
             
             .stat-number {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
             .stat-label {
-                font-size: 0.7rem;
+                font-size: 0.65rem;
+                text-align: center;
+                line-height: 1.2;
             }
             
             .main-content {
                 padding: 10px;
             }
             
+            .section {
+                padding: 15px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+            }
+            
             .section-title {
                 font-size: 1.1rem;
-                padding: 10px 12px;
+                padding: 0 0 8px 0;
+                margin-bottom: 12px;
+                line-height: 1.2;
             }
             
             .section p {
                 font-size: 0.85rem;
+                line-height: 1.5;
+                margin-bottom: 10px;
             }
             
             .course-intro {
                 padding: 12px;
+                margin-bottom: 15px;
             }
             
             .icon-text-grid {
-                gap: 12px;
+                gap: 10px;
+                grid-template-columns: 1fr;
             }
             
             .icon-text-item {
                 padding: 12px;
             }
             
-            .module-content {
-                gap: 12px;
+            .item-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+                margin-bottom: 10px;
             }
             
-            .module-card {
+            .item-title {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+            
+            .item-description {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+            
+            .module-content {
+                gap: 10px;
+                grid-template-columns: 1fr;
+            }
+            
+            .module-item {
                 padding: 12px;
+                font-size: 0.85rem;
+            }
+            
+            .module-item-list li {
+                margin-bottom: 6px;
+                line-height: 1.4;
+                font-size: 0.8rem;
+            }
+            
+            .faculty-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
             }
             
             .faculty-card {
                 padding: 12px;
             }
             
+            .faculty-avatar {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .faculty-card h3 {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+            
+            .faculty-card p {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .info-card {
+                padding: 12px;
+            }
+            
+            .info-card h3 {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+            }
+            
+            .info-card p {
+                font-size: 0.8rem;
+                margin-bottom: 8px;
+            }
+            
+            .info-card ul {
+                margin-left: 15px;
+                margin-bottom: 10px;
+            }
+            
+            .info-card li {
+                margin-bottom: 6px;
+                line-height: 1.4;
+                font-size: 0.8rem;
+            }
+            
+            .payment-info {
+                padding: 12px;
+                margin-top: 12px;
+            }
+            
+            .payment-info p {
+                font-size: 0.8rem;
+                margin-bottom: 6px;
+            }
+            
             .cta-button {
-                padding: 10px 20px;
-                font-size: 0.85rem;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .footer {
+                padding: 20px 10px;
+            }
+            
+            .footer h3 {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+            
+            .footer p {
+                font-size: 0.8rem;
+                margin-bottom: 8px;
+            }
+            
+            /* 确保所有文本内容强制换行 */
+            * {
+                word-wrap: break-word;
+                box-sizing: border-box;
+            }
+            
+            .section p,
+            .item-description,
+            .feature-item p,
+            .module-item-list li,
+            .info-card p,
+            .payment-info p {
+                word-wrap: break-word;
+                line-height: 1.5;
+            }
+            
+            /* 确保图片自适应 */
+            img {
+                max-width: 100%;
+                height: auto;
             }
         }
     </style>
