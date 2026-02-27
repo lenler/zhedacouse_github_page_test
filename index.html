@@ -1686,21 +1686,21 @@
             const params = new URLSearchParams(window.location.search);
             const teacherKey = (params.get('teacher') || '').trim().toLowerCase();
             const teacherMap = {
-                liuting: { name: '刘婷', file: 'assets/刘婷.jpg' },
-                fengliangyong: { name: '封良勇', file: 'assets/封良勇.jpg' },
-                fengliangfu: { name: '封良福', file: 'assets/封良福.jpg' },
-                changxiajie: { name: '常夏洁', file: 'assets/常夏洁.jpg' },
-                zhanglu: { name: '张露', file: 'assets/张露.jpg' },
-                pengsongsong: { name: '彭松松', file: 'assets/彭松松.png' },
-                xuguoping: { name: '徐国平', file: 'assets/徐国平.png' },
-                liyazhen: { name: '李雅珍', file: 'assets/李雅珍.png' },
-                fanyihuan: { name: '樊奕欢', file: 'assets/樊奕欢.jpeg' },
-                wuliangzhou: { name: '武俍州', file: 'assets/武俍州.jpg' },
-                wangxiaojuan: { name: '汪小娟', file: 'assets/汪小娟.jpg' },
-                shenfei: { name: '沈菲', file: 'assets/沈菲.png' },
-                hehaiyan: { name: '贺海燕', file: 'assets/贺海燕.png' },
-                jinyiwen: { name: '金逸雯', file: 'assets/金逸雯.jpg' },
-                madaxiong: { name: '马达雄', file: 'assets/马达雄.png' }
+                liuting: { name: '刘婷', file: 'assets/刘婷.jpg' ,phoneNumber:'18072752995'},
+                fengliangyong: { name: '封良勇', file: 'assets/封良勇.jpg' ,phoneNumber:'13757108510'},
+                fengliangfu: { name: '封良福', file: 'assets/封良福.jpg' ,phoneNumber:'13957148407'},
+                changxiajie: { name: '常夏洁', file: 'assets/常夏洁.jpg' ,phoneNumber:'16605810651'},
+                zhanglu: { name: '张露', file: 'assets/张露.jpg' ,phoneNumber:'15906618726'},
+                pengsongsong: { name: '彭松松', file: 'assets/彭松松.png' ,phoneNumber:'19858148227'},
+                xuguoping: { name: '徐国平', file: 'assets/徐国平.png' ,phoneNumber:'13757108269'},
+                liyazhen: { name: '李雅珍', file: 'assets/李雅珍.png' ,phoneNumber:'13805780645'},
+                fanyihuan: { name: '樊奕欢', file: 'assets/樊奕欢.jpeg' ,phoneNumber:'13757129152'},
+                wuliangzhou: { name: '武俍州', file: 'assets/武俍州.jpg' ,phoneNumber:'13283887052'},
+                wangxiaojuan: { name: '汪小娟', file: 'assets/汪小娟.jpg' ,phoneNumber:'13675878883'},
+                shenfei: { name: '沈菲', file: 'assets/沈菲.png' ,phoneNumber:'18868846237'},
+                hehaiyan: { name: '贺海燕', file: 'assets/贺海燕.png' ,phoneNumber:'19967332809'},
+                jinyiwen: { name: '金逸雯', file: 'assets/金逸雯.jpg' ,phoneNumber:'19967471563'},
+                madaxiong: { name: '马达雄', file: 'assets/马达雄.png' ,phoneNumber:'13588429725'}
             };
             
             const qrName = document.getElementById('teacher-qr-name');
@@ -1709,7 +1709,7 @@
             
             if (!teacherKey) {
                 const teacher = teacherMap.zhanglu;
-                qrName.textContent = `${teacher.name} 老师`;
+                qrName.textContent = `${teacher.name} 老师 ${teacher.phoneNumber}`;
                 qrImage.onerror = null;
                 qrImage.src = teacher.file;
                 qrImage.alt = `${teacher.name} 二维码`;
@@ -1717,7 +1717,7 @@
                 qrEmpty.style.display = 'none';
             } else if (teacherMap[teacherKey]) {
                 const teacher = teacherMap[teacherKey];
-                qrName.textContent = `${teacher.name} 老师`;
+                qrName.textContent = `${teacher.name} 老师 ${teacher.phoneNumber}`;
                 qrImage.onerror = null;
                 qrImage.src = teacher.file;
                 qrImage.alt = `${teacher.name} 二维码`;
