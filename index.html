@@ -1525,7 +1525,11 @@
                 <div class="footer-section">
                     <p>扫描浙江大学老师二维码</p>
                     <p>获取最新课程信息和活动通知</p>
-                   
+                    <div id="teacher-qr-wrapper" style="margin-top: 10px;">
+                        <p id="teacher-qr-name" style="margin-bottom: 8px;"></p>
+                        <img id="teacher-qr-image" src="" alt="" style="width: 120px; height: auto; display: none;">
+                        <p id="teacher-qr-empty" style="margin-bottom: 0; display: none;">未找到对应老师二维码</p>
+                    </div>
                 </div>
                 <div class="footer-section">
                     
@@ -1679,10 +1683,75 @@
                 updateScrollIndicators();
             }
 
+            const params = new URLSearchParams(window.location.search);
+            const teacherKey = (params.get('teacher') || '').trim().toLowerCase();
+            const teacherMap = {
+                liuting: { name: '刘婷', file: 'assets/刘婷.jpg' },
+                fengliangyong: { name: '封良勇', file: 'assets/封良勇.jpg' },
+                fengliangfu: { name: '封良福', file: 'assets/封良福.jpg' },
+                changxiajie: { name: '常夏洁', file: 'assets/常夏洁.jpg' },
+                zhanglu: { name: '张露', file: 'assets/张露.jpg' },
+                pengsongsong: { name: '彭松松', file: 'assets/彭松松.png' },
+                xuguoping: { name: '徐国平', file: 'assets/徐国平.png' },
+                liyazhen: { name: '李雅珍', file: 'assets/李雅珍.png' },
+                fanyihuan: { name: '樊奕欢', file: 'assets/樊奕欢.jpeg' },
+                wuliangzhou: { name: '武俍州', file: 'assets/武俍州.jpg' },
+                wangxiaojuan: { name: '汪小娟', file: 'assets/汪小娟.jpg' },
+                shenfei: { name: '沈菲', file: 'assets/沈菲.png' },
+                hehaiyan: { name: '贺海燕', file: 'assets/贺海燕.png' },
+                jinyiwen: { name: '金逸雯', file: 'assets/金逸雯.jpg' },
+                madaxiong: { name: '马达雄', file: 'assets/马达雄.png' }
+            };
+            
+            const qrName = document.getElementById('teacher-qr-name');
+            const qrImage = document.getElementById('teacher-qr-image');
+            const qrEmpty = document.getElementById('teacher-qr-empty');
+            
+            if (!teacherKey) {
+                const teacher = teacherMap.zhanglu;
+                qrName.textContent = `${teacher.name} 老师`;
+                qrImage.onerror = null;
+                qrImage.src = teacher.file;
+                qrImage.alt = `${teacher.name} 二维码`;
+                qrImage.style.display = 'block';
+                qrEmpty.style.display = 'none';
+            } else if (teacherMap[teacherKey]) {
+                const teacher = teacherMap[teacherKey];
+                qrName.textContent = `${teacher.name} 老师`;
+                qrImage.onerror = null;
+                qrImage.src = teacher.file;
+                qrImage.alt = `${teacher.name} 二维码`;
+                qrImage.style.display = 'block';
+                qrEmpty.style.display = 'none';
+            } else {
+                qrName.textContent = '老师二维码';
+                const fallbackBase = `assets/${teacherKey}`;
+                const fallbackExtensions = ['jpg', 'png', 'jpeg'];
+                let fallbackIndex = 0;
+                const tryFallback = () => {
+                    if (fallbackIndex >= fallbackExtensions.length) {
+                        qrImage.style.display = 'none';
+                        qrEmpty.style.display = 'block';
+                        return;
+                    }
+                    const ext = fallbackExtensions[fallbackIndex];
+                    fallbackIndex += 1;
+                    qrImage.src = `${fallbackBase}.${ext}`;
+                };
+                qrImage.onerror = () => {
+                    tryFallback();
+                };
+                qrImage.alt = `${teacherKey} 二维码`;
+                qrImage.style.display = 'block';
+                qrEmpty.style.display = 'none';
+                tryFallback();
+            }
+
             window.addEventListener('scroll', checkFade);
             checkFade(); // Initial check
             initMonthSlider(); // Initialize month slider functionality
         });
+
     </script>
 </body>
 </html>
