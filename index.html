@@ -1686,9 +1686,9 @@
             const params = new URLSearchParams(window.location.search);
             const teacherKey = (params.get('teacher') || '').trim().toLowerCase();
             const teacherMap = {
-                liuting: { name: '刘婷', file: 'assets/刘婷.jpg' ,phoneNumber:'18072752995'},
+                liuting: { name: '刘婷', file: 'assets/刘婷.jpg' ,phoneNumber:'18072752995', registrationLink: 'https://alidocs.dingtalk.com/notable/share/form/v01meonarb5pLmjpqXx_rfJ5zZQ_rnTssEd'},
                 xudongying: { name: '徐冬英', file: 'assets/徐冬英.jpg' ,phoneNumber:'18957111371'},
-                fengliangyong: { name: '封良勇', file: 'assets/封良勇.jpg' ,phoneNumber:'13757108510'},
+                fengliangyong: { name: '封良勇', file: 'assets/封良勇.jpg' ,phoneNumber:'13757108510', registrationLink: 'https://alidocs.dingtalk.com/notable/share/form/v01meonarb5pLmjpqXx_z0ZDJUQ_ERpfheG'},
                 fulaoshi: { name: '福老师', file: 'assets/福老师.jpg' ,phoneNumber:'13957148407'},
                 changxiajie: { name: '常夏洁', file: 'assets/常夏洁.jpg' ,phoneNumber:'16605810651'},
                 zhanglu: { name: '张露', file: 'assets/张露.jpg' ,phoneNumber:'15906618726'},
@@ -1701,7 +1701,10 @@
                 shenfei: { name: '沈菲', file: 'assets/沈菲.png' ,phoneNumber:'18868846237'},
                 hehaiyan: { name: '贺海燕', file: 'assets/贺海燕.png' ,phoneNumber:'19967332809'},
                 jinyiwen: { name: '金逸雯', file: 'assets/金逸雯.jpg' ,phoneNumber:'19967471563'},
-                madaxiong: { name: '马达雄', file: 'assets/马达雄.png' ,phoneNumber:'13588429725'}
+                huse: { name: '胡瑟', file: 'assets/胡瑟.jpg' ,phoneNumber:'0571-86971296'},
+                fengcaifeng: { name: '冯彩凤', file: 'assets/冯彩凤.jpg' ,phoneNumber:'13777351943'},
+                madaxiong: { name: '马达雄', file: 'assets/马达雄.png' ,phoneNumber:'13588429725'},
+                fengliangfu: { name: '封良富', file: 'assets/封良富.jpg' ,phoneNumber:'13757108510', registrationLink: 'https://alidocs.dingtalk.com/notable/share/form/v01meonarb5pLmjpqXx_eSsbyP1_bMp0ym2'}
             };
             
             const qrName = document.getElementById('teacher-qr-name');
@@ -1746,6 +1749,17 @@
                 qrImage.style.display = 'block';
                 qrEmpty.style.display = 'none';
                 tryFallback();
+            }
+
+            // 根据老师参数动态修改所有"立即报名"链接
+            const currentTeacher = teacherMap[teacherKey];
+            if (currentTeacher && currentTeacher.registrationLink) {
+                const registrationLinks = document.querySelectorAll('a.btn-sm');
+                registrationLinks.forEach(link => {
+                    if (link.textContent.trim() === '立即报名') {
+                        link.href = currentTeacher.registrationLink;
+                    }
+                });
             }
 
             window.addEventListener('scroll', checkFade);
