@@ -36,6 +36,8 @@
   color: #fff;
   max-width: 800px;
   padding: 0 20px;
+  z-index: 2;
+  position: relative;
 }
 
 .carousel-content h2 {
@@ -104,7 +106,7 @@
 
 .carousel-indicators {
   position: absolute;
-  bottom: 30px;
+  bottom: 60px; /* Raised to avoid wave */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -167,6 +169,24 @@
   right: 20px;
 }
 
+.banner-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.banner-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
 @media (max-width: 768px) {
   .banner {
     height: 520px;
@@ -195,5 +215,13 @@
 
   .banner-arrow-next {
     right: 12px;
+  }
+  
+  .banner-wave svg {
+    height: 40px;
+  }
+  
+  .carousel-indicators {
+    bottom: 40px;
   }
 }

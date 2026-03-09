@@ -8,7 +8,6 @@ const { Header: AntHeader } = Layout;
 
 const navLinks = [
   { path: '/', label: '首页', hash: 'banner' },
-  { path: '/', label: '活动', hash: 'events' },
   { path: '/', label: '课程', hash: 'courses' },
   { path: '/', label: '关于浙大', hash: 'zju-intro' },
   { path: '/', label: '精彩故事', hash: 'stories' },
@@ -58,6 +57,7 @@ export default function Header() {
           <div className="desktop-nav">
             <Menu
               mode="horizontal"
+              disabledOverflow={true}
               selectedKeys={[]}
               className="nav-menu"
               items={navLinks.map((link) => ({

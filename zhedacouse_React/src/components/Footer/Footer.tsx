@@ -43,7 +43,7 @@ export default function Footer({ teacherKey }: FooterProps) {
               <div className="link-group">
                 <h4>快速链接</h4>
                 <ul>
-                  <li><Link to="/#events">近期活动</Link></li>
+                  <li><Link to="/#courses">精品课程</Link></li>
                   <li><Link to="/#zju-intro">关于浙大</Link></li>
                   <li><Link to="/#stories">精彩故事</Link></li>
                   <li><Link to="/register">立即报名</Link></li>
@@ -55,7 +55,7 @@ export default function Footer({ teacherKey }: FooterProps) {
                 <ul>
                   <li>
                     <EnvironmentOutlined style={{ marginRight: 8 }} />
-                    杭州市西湖区浙江大学华家池校区
+                    地址：浙江省杭州市浙江大学华家池校区中心二楼
                   </li>
                   <li>
                     <PhoneOutlined style={{ marginRight: 8 }} />

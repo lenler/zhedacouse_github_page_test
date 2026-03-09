@@ -63,6 +63,7 @@
   font-weight: bold;
   color: var(--zju-blue);
   margin-bottom: 5px;
+  white-space: nowrap;
 }
 
 .stat-label {

@@ -43,11 +43,11 @@ export default function ZJUIntroSection() {
                 <div className="stat-label">办学年限</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">500+</div>
+                <div className="stat-number">5000+</div>
                 <div className="stat-label">合作企业</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">10000+</div>
+                <div className="stat-number">10万+</div>
                 <div className="stat-label">培训学员</div>
               </div>
               <div className="stat-item">

@@ -2,7 +2,7 @@
   background: #f8fafc;
   position: relative;
   overflow: hidden;
-  padding: 100px 0;
+  padding: 80px 0 100px;
 }
 
 .courses-bg-pattern {
@@ -33,7 +33,9 @@
 }
 
 .section-badge {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto 20px;
   align-items: center;
   gap: 8px;
   padding: 8px 20px;
@@ -42,7 +44,6 @@
   font-size: 14px;
   font-weight: 600;
   color: #0055A2;
-  margin-bottom: 20px;
   letter-spacing: 1px;
 }
 
@@ -55,8 +56,22 @@
   font-size: 42px;
   font-weight: 800;
   color: #1a1a2e;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #0055A2, #E6A100);
+  border-radius: 2px;
 }
 
 .section-subtitle {
@@ -110,6 +125,10 @@
 }
 
 .course-card.show {
+  display: block;
+}
+
+.course-card.show.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -125,9 +144,9 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   position: relative;
   overflow: hidden;
 }
@@ -145,8 +164,9 @@
 }
 
 .course-card:hover .course-card-inner {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 85, 162, 0.12);
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 85, 162, 0.15);
+  border-color: transparent;
 }
 
 .course-card:hover .course-card-inner::before {
