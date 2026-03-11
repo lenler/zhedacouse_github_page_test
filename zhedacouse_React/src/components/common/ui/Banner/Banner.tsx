@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Carousel } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import type { CarouselRef } from 'antd/es/carousel';
-import { bannerSlides } from '../../data';
+import { bannerSlides } from '../../../../data';
 import './Banner.css';
 
 export default function Banner() {

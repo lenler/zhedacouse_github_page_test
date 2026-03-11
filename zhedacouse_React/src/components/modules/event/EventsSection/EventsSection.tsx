@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { CalendarOutlined, UserOutlined, ArrowRightOutlined } from '@ant-design/icons';
-import { events, teachers, defaultTeacher } from '../../data';
+import { events, teachers, defaultTeacher } from '../../../../data';
 import './EventsSection.css';
 
 export default function EventsSection() {

@@ -1,4 +1,4 @@
-import { stories } from '../../data/index';
+import { stories } from '../../../../data/index';
 import './StoriesSection.css';
 
 const storyImages = ['/image/资料夹/精彩活动2.jpg', '/image/资料夹/精彩活动1.jpg', '/image/资料夹/精彩活动3.jpg'];

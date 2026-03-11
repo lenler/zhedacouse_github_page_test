@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, type JSX } from 'react';
 import { Link } from 'react-router-dom';
-import { courses, type Course } from '../../data';
+import { courses, type Course } from '../../../../data/index';
 import './CoursesSection.css';
 
 const iconSvgs: Record<string, JSX.Element> = {

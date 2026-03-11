@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { EnvironmentOutlined, PhoneOutlined} from '@ant-design/icons';
-import { teachers, defaultTeacher, type Teacher } from '../../data';
+import { teachers, defaultTeacher, type Teacher } from '../../../../data';
 import './Footer.css';
 
 interface FooterProps {
