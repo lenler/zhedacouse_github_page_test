@@ -17,9 +17,12 @@ export default function StoriesSection() {
               key={story.id} 
               className={`stories-card fade-in ${index === 1 ? 'delay-1' : index === 2 ? 'delay-2' : ''}`}
             >
-              <div 
+              <img
                 className="stories-image"
-                style={{ backgroundImage: `url('${storyImages[story.imageIndex - 1]}')` }}
+                src={storyImages[story.imageIndex - 1]}
+                alt={story.title}
+                loading="lazy"
+                decoding="async"
               />
               <div className="stories-content">
                 <div className="stories-name">{story.title}</div>

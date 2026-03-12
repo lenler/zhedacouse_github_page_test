@@ -31,7 +31,7 @@ export default function ZJUIntroSection() {
         </div>
         <div className="intro-content">
           <div className="intro-image fade-in">
-            <img src="/image/资料夹/5.jpg" alt="浙江大学校园" />
+            <img src="/image/资料夹/5.jpg" alt="浙江大学校园" loading="lazy" decoding="async" />
           </div>
           <div className="intro-text fade-in delay-1">
             <h3>百年学府，引领创新</h3>

@@ -26,20 +26,9 @@
 
 .stories-image {
   height: 200px;
-  background-size: cover;
-  background-position: center;
-}
-
-.stories-card:nth-child(1) .stories-image {
-  background-image: url('/image/资料夹/精彩活动2.jpg');
-}
-
-.stories-card:nth-child(2) .stories-image {
-  background-image: url('/image/资料夹/精彩活动1.jpg');
-}
-
-.stories-card:nth-child(3) .stories-image {
-  background-image: url('/image/资料夹/精彩活动3.jpg');
+  width: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .stories-content {

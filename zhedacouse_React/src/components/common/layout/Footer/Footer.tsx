@@ -28,7 +28,7 @@ export default function Footer({ teacherKey }: FooterProps) {
           <div className="footer-main">
             <div className="footer-brand">
               <div className="footer-logo">
-                <img src="/image/资料夹/1.jpg" alt="浙江大学" style={{ width: 40, height: 40, objectFit: 'cover', borderRadius: '50%', marginRight: 10 }} />
+                <img src="/image/资料夹/1.jpg" alt="浙江大学" loading="lazy" decoding="async" style={{ width: 40, height: 40, objectFit: 'cover', borderRadius: '50%', marginRight: 10 }} />
                 <div>
                   <h3>浙江大学</h3>
                   <span>企业家培训</span>
@@ -73,6 +73,8 @@ export default function Footer({ teacherKey }: FooterProps) {
                     src={teacher.file} 
                     alt={`${teacher.name} 二维码`}
                     className="qr-image"
+                    loading="lazy"
+                    decoding="async"
                   />
               </div>
               <p className="qr-title">扫码添加老师</p>
