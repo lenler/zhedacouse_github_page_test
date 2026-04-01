@@ -143,7 +143,7 @@ export const courses: Course[] = [
     category: 'AI创新',
     icon: 'ai',
     image: '/image/资料夹/精彩活动5.jpg',
-    detailUrl: '/prototype/浙江大学企业AI转型实战研修班.html'
+    detailUrl: '/prototype/image-poster.html'
   },
   {
     id: 'ai-2',
