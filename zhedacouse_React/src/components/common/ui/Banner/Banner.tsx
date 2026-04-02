@@ -36,14 +36,16 @@ export default function Banner() {
           const shouldLoadImage = isCurrent || isNext || isPrev;
           return (
             <div key={slide.bgImage} className="carousel-slide">
-              <div
-                className="carousel-item"
-                style={{
-                  backgroundImage: shouldLoadImage
-                    ? `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), url('${slide.bgImage}')`
-                    : 'linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45))',
-                }}
-              >
+              <div className="carousel-item">
+                {shouldLoadImage && (
+                  <img
+                    src={slide.bgImage}
+                    alt={slide.title}
+                    className="carousel-bg-img"
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                  />
+                )}
+                <div className="carousel-overlay" />
                 <div className="carousel-content">
                   <h2>{slide.title}</h2>
                   {slide.subtitle && (

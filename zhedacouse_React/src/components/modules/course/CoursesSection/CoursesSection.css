@@ -174,17 +174,43 @@
 }
 
 .course-image-wrapper {
+  position: relative;
+  width: calc(100% + 64px);
   height: 200px;
   margin: -32px -32px 24px -32px;
-  position: relative;
+  border-radius: 24px 24px 0 0;
   overflow: hidden;
+}
+
+.course-image-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  z-index: 1;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 .course-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease, opacity 0.3s ease;
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.course-image-wrapper img.loaded {
+  opacity: 1;
 }
 
 .course-card:hover .course-image-wrapper img {

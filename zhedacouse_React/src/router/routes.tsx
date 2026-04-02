@@ -1,6 +1,8 @@
+import { lazy } from 'react';
 import { type RouteObject } from 'react-router-dom';
-import Home from '../pages/Home';
-import Register from '../pages/Register';
+
+const Home = lazy(() => import('../pages/Home'));
+const Register = lazy(() => import('../pages/Register'));
 
 export const routes: RouteObject[] = [
   {

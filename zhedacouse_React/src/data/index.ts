@@ -131,7 +131,8 @@ export const courses: Course[] = [
     fee: '68000元',
     category: '人文智慧',
     icon: 'star',
-    image: '/image/资料夹/精彩活动4.jpg'
+    image: '/image/资料夹/精彩活动4.jpg',
+    detailUrl: '/prototype/浙江大学文化智慧与商业高级研修班.html'
   },
   {
     id: 'ai-1',
@@ -143,7 +144,7 @@ export const courses: Course[] = [
     category: 'AI创新',
     icon: 'ai',
     image: '/image/资料夹/精彩活动5.jpg',
-    detailUrl: '/prototype/image-poster.html'
+    detailUrl: '/prototype/浙江大学企业AI转型实战研修班.html'
   },
   {
     id: 'ai-2',

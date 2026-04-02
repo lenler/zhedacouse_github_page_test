@@ -154,7 +154,16 @@ export default function CoursesSection() {
               <div className="course-card-inner">
                 {course.image ? (
                   <div className="course-image-wrapper">
-                    <img src={course.image} alt={course.title} loading="lazy" />
+                    <div className="course-image-skeleton" />
+                    <img 
+                      src={course.image} 
+                      alt={course.title} 
+                      loading="lazy" 
+                      decoding="async"
+                      onLoad={(e) => {
+                        (e.target as HTMLImageElement).classList.add('loaded');
+                      }}
+                    />
                     <div className="course-category-badge" style={{ background: categoryColors[course.category]?.gradient }}>
                       {course.category}
                     </div>

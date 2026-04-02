@@ -160,6 +160,18 @@
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(230, 161, 0, 0.3);
+}
+
+.drawer-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 161, 0, 0.4);
+  color: white;
+}
+
+.mobile-drawer-footer {
+  padding: 24px;
   margin-top: 16px;
 }
 

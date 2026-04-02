@@ -94,28 +94,23 @@ export default function Header() {
             <Menu
               mode="vertical"
               selectedKeys={[]}
-              items={[
-                ...navLinks.map((link) => ({
-                  key: link.hash,
-                  label: (
-                    <Link 
-                      to={link.path}
-                      onClick={(e) => handleNavClick(e, link.hash)}
-                    >
-                      {link.label}
-                    </Link>
-                  ),
-                })),
-                {
-                  key: 'register',
-                  label: (
-                    <Link to="/register" className="drawer-cta">
-                      立即报名
-                    </Link>
-                  ),
-                },
-              ]}
+              items={navLinks.map((link) => ({
+                key: link.hash,
+                label: (
+                  <Link 
+                    to={link.path}
+                    onClick={(e) => handleNavClick(e, link.hash)}
+                  >
+                    {link.label}
+                  </Link>
+                ),
+              }))}
             />
+            <div className="mobile-drawer-footer">
+              <Link to="/register" className="drawer-cta" onClick={() => setDrawerOpen(false)}>
+                立即报名
+              </Link>
+            </div>
           </Drawer>
         </div>
       </div>
