@@ -1,7 +1,12 @@
 import { stories } from '../../../../data/index';
+import { withBasePath } from '../../../../utils/basePath';
 import './StoriesSection.css';
 
-const storyImages = ['/image/资料夹/精彩活动2.jpg', '/image/资料夹/精彩活动1.jpg', '/image/资料夹/精彩活动3.jpg'];
+const storyImages = [
+  withBasePath('/image/资料夹/精彩活动2.jpg'),
+  withBasePath('/image/资料夹/精彩活动1.jpg'),
+  withBasePath('/image/资料夹/精彩活动3.jpg'),
+];
 
 export default function StoriesSection() {
   return (

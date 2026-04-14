@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Layout, Menu, Button, Drawer } from 'antd';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
+import { withBasePath } from '../../../../utils/basePath';
 import './Header.css';
 
 const { Header: AntHeader } = Layout;
@@ -46,7 +47,7 @@ export default function Header() {
         <div className="header-content">
           <Link to="/" className="logo">
             <div className="logo-icon">
-              <img src="/image/资料夹/1.jpg" alt="浙江大学" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
+              <img src={withBasePath('/image/资料夹/1.jpg')} alt="浙江大学" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
             </div>
             <div className="logo-text">
               <h1>浙江大学</h1>

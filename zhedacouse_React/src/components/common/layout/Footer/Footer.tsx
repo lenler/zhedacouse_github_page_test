@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { EnvironmentOutlined, PhoneOutlined} from '@ant-design/icons';
 import { teachers, defaultTeacher, type Teacher } from '../../../../data';
+import { withBasePath } from '../../../../utils/basePath';
 import './Footer.css';
 
 interface FooterProps {
@@ -28,7 +29,7 @@ export default function Footer({ teacherKey }: FooterProps) {
           <div className="footer-main">
             <div className="footer-brand">
               <div className="footer-logo">
-                <img src="/image/资料夹/1.jpg" alt="浙江大学" loading="lazy" decoding="async" style={{ width: 40, height: 40, objectFit: 'cover', borderRadius: '50%', marginRight: 10 }} />
+                <img src={withBasePath('/image/资料夹/1.jpg')} alt="浙江大学" loading="lazy" decoding="async" style={{ width: 40, height: 40, objectFit: 'cover', borderRadius: '50%', marginRight: 10 }} />
                 <div>
                   <h3>浙江大学</h3>
                   <span>企业家培训</span>
