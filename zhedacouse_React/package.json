@@ -1,8 +1,8 @@
 {
-  "name": "zhedacouse",
+  "name": "zhedacouse_github_page_test",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://hyyyy051028.github.io/zhedacouse/",
+  "homepage": "https://lenler.github.io/zhedacouse_github_page_test/",
   "type": "module",
   "scripts": {
     "dev": "vite",
